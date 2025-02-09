@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "AdFriend",
+  "version": "1.0",
+  "description": "Replace ads with positive widgets!",
+  "icons": { "128": "assets/icon.png" },
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content-scripts/ad-detector.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "options_page": "options/options.html",
+  "action": {
+    "default_popup": "options/options.html"
+  }
+}
